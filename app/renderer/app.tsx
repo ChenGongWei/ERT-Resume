@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import Title from "./title";
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
                 <Route path="/">
                     <div>可视化简历平台</div>
                     <div>Electron + React</div>
+                    <Title text={'标题啦'}/>
                 </Route>
             </Switch>
         </Router>

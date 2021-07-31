@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const devConfig = {
     mode: 'development',
     entry: { // 渲染进程的入口文件
-        index: path.resolve(__dirname, '../app/renderer/app.jsx'),
+        index: path.resolve(__dirname, '../app/renderer/app.tsx'),
     },
     output: {
         filename: '[name].[hash].js',
@@ -32,6 +32,31 @@ const devConfig = {
             chunks: ['index'],
         }),
     ],
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader'],
+            },
+            {
+                test: /\.less$/,
+                exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: '[name]__[local]__[hash:base64:5]',
+                            },
+                        },
+                    },
+                    'postcss-loader',
+                    'less-loader',
+                ],
+            },
+        ],
+    },
 };
 
 module.exports = webpackMerge.merge(baseConfig, devConfig);

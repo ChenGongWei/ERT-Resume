@@ -20,7 +20,19 @@ module.exports = {
                     loader: 'babel-loader', // 使用 babel-loader 对匹配上的文件进行处理
                 },
             },
+            {
+                test: /\.(jpg|png|jpeg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name]__[hash].[ext]',
+                            outputPath: 'images/',
+                        },
+                    },
+                ],
+            },
         ],
     },
     plugins: [new CleanWebpackPlugin()], // 每次打包前删除之前的dist文件
-}
+};
