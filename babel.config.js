@@ -13,18 +13,6 @@ module.exports = {
                 loose: true,
                 lazy: true
             }
-        ],
-        [
-            'babel-plugin-react-css-modules',
-            {
-                exclude: 'node_modules',
-                webpackHotModuleReloading: true,
-                generateScopedName: '[name]__[local]__[hash:base64:5]',
-                autoResolveMultipleImports: true,
-                filetypes: {
-                    '.less': { syntax: 'postcss-less' },
-                },
-            },
-        ],
+        ]
     ]
 }

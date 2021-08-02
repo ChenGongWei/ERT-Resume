@@ -9,6 +9,8 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'], // 导入语句没有后缀时，会带上这里配置的后缀去寻找对应文件
         alias: { // 取别名
             '@src': path.join(__dirname, '../', 'app/renderer'),
+            '@assets': path.join(__dirname, '../', 'assets'),
+            '@common': path.join(__dirname, '../', 'app/renderer/common'),
         },
     },
     module: { // 打包方案
