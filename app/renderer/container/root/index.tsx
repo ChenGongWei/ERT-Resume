@@ -1,7 +1,7 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { shell } from 'electron';
-import { ROUTER_ENTRY, ROUTER_KEY } from '@common/constants/router';
+import { ROUTER_ENTRY } from '@common/constants/router';
 import { isHttpOrHttpsUrl } from '@common/utils/router';
 import Logo from '@assets/logo.png';
 import style from './index.less';
